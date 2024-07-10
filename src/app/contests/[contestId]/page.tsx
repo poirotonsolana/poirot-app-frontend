@@ -1,9 +1,29 @@
+"use client"
 import React from 'react'
+import { useSearchParams } from 'next/navigation'
+import Image from 'next/image'
 
-const page = ({params}: {params: {contestId: number}}) => {
+
+const SingleAuditPage = () => {
+
+const searchParams = useSearchParams();
+const uniqueId = searchParams.get('id');
+const auditDate = searchParams.get('date');
+const auditStatus = searchParams.get('status');
+const logoUrl = searchParams.get('logo');
+
+
+
   return (
-    <div className='flex items-center justify-center'>Audit: {params.contestId}</div>
+    <>
+      <div className='flex flex-col gap-16 items-center justify-center'>Audit: {uniqueId}
+      {logoUrl && <Image src={logoUrl} alt={`Audit ${uniqueId} logo`} width={100} height={100} />}
+        <p className='text-center'>Date: {auditDate}</p>
+        <p className='text-center'>Status: {auditStatus}</p>
+      </div>
+    </>
+   
   )
 }
 
-export default page;
+export default SingleAuditPage;

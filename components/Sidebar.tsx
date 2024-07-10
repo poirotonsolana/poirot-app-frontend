@@ -18,7 +18,7 @@ import {
    
   export default function Sidebar() {
     return (
-      <Card className="h-[calc(100vh-2rem)] max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
+      <Card className="h-[calc(100vh-2rem)] max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 border-r-2">
         <div className="mb-2 p-4 flex items-center justify-center">
           <Typography variant="h5" color="blue-gray">
             <Link href={"/"}>
