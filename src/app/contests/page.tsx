@@ -1,6 +1,8 @@
 import React from 'react';
 import audits from '../../../data/audits';
 import Audit from '../../../components/Audit';
+import Image from 'next/image';
+import logo from '../../../public/logo.png'
 
 const Contests = () => {
   const activeAudits = audits.filter(audit => audit.status === 'active');
@@ -10,7 +12,11 @@ const Contests = () => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <p className='text-2xl font-bold'>Poirot Audits</p>
+      <Image
+        src={logo}
+        alt='top-logo'
+        width={100}
+      />
       <div className='mt-8 w-full max-w-4xl'>
         <div>
           <h2 className='text-xl font-bold'>Active Audits</h2>
@@ -23,6 +29,9 @@ const Contests = () => {
                   status={audit.status} 
                   logo={audit.logo} 
                   date={audit.date} 
+                  description={audit.description}
+                  tags={audit.tags}
+                  prizepool={audit.prizepool}
                 />
               </li>
             ))}
@@ -39,6 +48,9 @@ const Contests = () => {
                   status={audit.status} 
                   logo={audit.logo} 
                   date={audit.date} 
+                  description={audit.description}
+                  tags={audit.tags}
+                  prizepool={audit.prizepool}
                 />
               </li>
             ))}
@@ -55,6 +67,9 @@ const Contests = () => {
                   status={audit.status} 
                   logo={audit.logo} 
                   date={audit.date} 
+                  description={audit.description}
+                  tags={audit.tags}
+                  prizepool={audit.prizepool}
                 />
               </li>
             ))}
@@ -71,6 +86,9 @@ const Contests = () => {
                   status={audit.status} 
                   logo={audit.logo} 
                   date={audit.date} 
+                  description={audit.description}
+                  tags={audit.tags}
+                  prizepool={audit.prizepool}
                 />
               </li>
             ))}
