@@ -20,7 +20,7 @@ const audits:Audits[]=[
         date: "2024-01-01",
         description:"Audit 1 description.",
         tags:["Hardhat","Foundry"],
-        prizepool:"1000BTC"
+        prizepool:"1000 BTC"
       },
       {
         id:2,
@@ -30,7 +30,7 @@ const audits:Audits[]=[
         date: "2024-02-15",
         description:"Audit 2 description.",
         tags:["Hardhat","Foundry"],
-        prizepool:"1000BTC"
+        prizepool:"1000 BTC"
       },
       {
         id:3,
@@ -40,7 +40,7 @@ const audits:Audits[]=[
         date: "2024-03-20",
         description:"Audit 3 description.",
         tags:["Hardhat","Foundry"],
-        prizepool:"1000BTC"
+        prizepool:"1000 BTC"
       },
       {
         id:4,
@@ -50,7 +50,7 @@ const audits:Audits[]=[
         date: "2024-04-10",
         description:"Audit 4 description.",
         tags:["Hardhat","Foundry"],
-        prizepool:"1000BTC"
+        prizepool:"1000 BTC"
       },
 ]
 

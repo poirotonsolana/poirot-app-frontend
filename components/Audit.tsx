@@ -19,7 +19,7 @@ const Audit: React.FC<AuditProps> = ({ id, name, status, logo, date, description
   return (
     
     <Link href={`/contests/${id}${queryParams}`}>
-      <div className='w-96 border-2 rounded-2xl bg-gray-300 p-4 flex justify-between'>
+      <div className='border-2 rounded-2xl bg-gray-300 p-4 flex justify-between'>
         <Image src={logo} alt={`${name} logo`} width={48} height={48} className='w-12 h-12 mb-2 mix-blend-difference'/>
         <p className='text-center text-xl font-bold mt-2'>{name}</p>
         <div className='flex flex-row gap-4'>
