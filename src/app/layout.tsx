@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 import Layout from '../../components/Layout'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const metadata: Metadata = {
   title: "Poirot App",
@@ -17,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
+          <ToastContainer />
           <Layout>
             {children}
           </Layout>

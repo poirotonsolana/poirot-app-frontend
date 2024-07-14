@@ -1,4 +1,3 @@
-import { StaticImageData } from 'next/image';
 
 export interface Audits {
     id:number;
@@ -49,6 +48,16 @@ const audits:Audits[]=[
         logo: 'https://upload.wikimedia.org/wikipedia/en/d/d0/Dogecoin_Logo.png',
         date: "2024-04-10",
         description:"Audit 4 description.",
+        tags:["Hardhat","Foundry"],
+        prizepool:"1000 BTC"
+      },
+      {
+        id:5,
+        name: "Audit 5",
+        status: "completed",
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png',
+        date: "2024-03-09",
+        description:"Audit 5 description.",
         tags:["Hardhat","Foundry"],
         prizepool:"1000 BTC"
       },
