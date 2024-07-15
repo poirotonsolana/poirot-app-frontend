@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 import Layout from '../../components/Layout'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TopButtonsNav from "../../components/TopButtonsNav";
 
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
+          <TopButtonsNav/>
           <ToastContainer />
           <Layout>
             {children}

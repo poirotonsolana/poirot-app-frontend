@@ -1,8 +1,7 @@
 import React from 'react';
 import audits from '../../../data/audits';
 import Audit from '../../../components/Audit';
-import Image from 'next/image';
-import logo from '../../../public/logo.png'
+
 
 const Contests = () => {
   const activeAudits = audits.filter(audit => audit.status === 'active');
@@ -12,17 +11,13 @@ const Contests = () => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <Image
-        src={logo}
-        alt='top-logo'
-        width={100}
-      />
+      
       <div className='mt-8 w-full max-w-4xl'>
         <div>
-          <h2 className='text-xl font-bold'>Active Audits</h2>
+          <h2 className='text-2xl font-bold'>Active Audits</h2>
           <ul className='flex flex-col gap-8 mt-4'>
             {activeAudits.map(audit => (
-              <li key={audit.id}>
+              <li key={audit.id} className='my-10 hover:scale-105 border-none bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -38,10 +33,10 @@ const Contests = () => {
           </ul>
         </div>
         <div className='mt-24'>
-          <h2 className='text-xl font-bold'>Upcoming Audits</h2>
+          <h2 className='text-2xl font-bold'>Upcoming Audits</h2>
           <ul className='flex flex-col gap-8 mt-4'>
             {upcomingAudits.map(audit => (
-              <li key={audit.id}>
+              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -57,10 +52,10 @@ const Contests = () => {
           </ul>
         </div>
         <div className='mt-24'>
-          <h2 className='text-xl font-bold'>Completed Audits</h2>
+          <h2 className='text-2xl font-bold'>Completed Audits</h2>
           <ul className='flex flex-col gap-8 mt-4'>
             {completedAudits.map(audit => (
-              <li key={audit.id}>
+              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -76,10 +71,10 @@ const Contests = () => {
           </ul>
         </div>
         <div className='mt-24'>
-          <h2 className='text-xl font-bold'>Judged Audits</h2>
+          <h2 className='text-2xl font-bold'>Judged Audits</h2>
           <ul className='flex flex-col gap-8 mt-4'>
             {judgedAudits.map(audit => (
-              <li key={audit.id}>
+              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 

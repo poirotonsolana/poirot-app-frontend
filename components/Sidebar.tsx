@@ -25,7 +25,7 @@ import {
                 <Image
                     src={poirotLogo}
                     alt="logo"
-                    width={52}
+                    width={58}
                     height={48}
                 />
             </Link>
@@ -33,17 +33,16 @@ import {
         </div>
         <List>
           <Link href={"/contests"}>
-              <ListItem>
+              <ListItem className="text-lg">
                 <ListItemPrefix>
                   <PresentationChartBarIcon className="h-5 w-5" />
                 </ListItemPrefix>
                 Contests
               </ListItem>
-          </Link>
-          <hr className="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"/>
+          </Link><hr className="h-3 w-48 border-t-2"/>
 
           <Link href={"/leaderboard"}>
-              <ListItem>
+              <ListItem className="text-lg">
                 <ListItemPrefix>
                   <ShoppingBagIcon className="h-5 w-5" />
                 </ListItemPrefix>

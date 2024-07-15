@@ -1,4 +1,3 @@
-
 export interface Audits {
     id:number;
     name: string; 
@@ -58,6 +57,36 @@ const audits:Audits[]=[
         logo: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png',
         date: "2024-03-09",
         description:"Audit 5 description.",
+        tags:["Hardhat","Foundry"],
+        prizepool:"1000 BTC"
+      },
+      {
+        id:6,
+        name: "Audit 6",
+        status: "active",
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png',
+        date: "2024-01-01",
+        description:"Audit 6 description.",
+        tags:["Hardhat","Foundry"],
+        prizepool:"1000 BTC"
+      },
+      {
+        id:7,
+        name: "Audit 7",
+        status: "upcoming",
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png',
+        date: "2024-01-01",
+        description:"Audit 7 description.",
+        tags:["Hardhat","Foundry"],
+        prizepool:"1000 BTC"
+      },
+      {
+        id:8,
+        name: "Audit 8",
+        status: "judging",
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png',
+        date: "2024-01-01",
+        description:"Audit 8 description.",
         tags:["Hardhat","Foundry"],
         prizepool:"1000 BTC"
       },

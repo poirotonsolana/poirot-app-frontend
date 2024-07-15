@@ -4,6 +4,7 @@ import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { toast } from "react-toastify";
+import { button } from '@material-tailwind/react';
 
 const SingleAuditPage = () => {
   const searchParams = useSearchParams();
@@ -18,8 +19,6 @@ const SingleAuditPage = () => {
   const [isJoined, setIsJoined] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isReporting, setIsReporting] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSignIn, setIsSignIn] = useState(true); // State to toggle between sign-in and sign-up forms
   const [reportedBugs, setReportedBugs] = useState<{ projectName: string; bugSeverity: string; description: string; contactInfo: { twitter: string; telegram: string; email: string; discord: string; }; }[]>([]);
   const [preferredCommunication, setPreferredCommunication] = useState('');
 
@@ -59,32 +58,13 @@ const SingleAuditPage = () => {
     setPreferredCommunication(e.target.value);
   }
 
-  const handleProfileClick = () => {
-    setIsModalOpen(true);
-  }
-
-  const handleModalClose = () => {
-    setIsModalOpen(false);
-  }
-
-  const handleSignInSignUpSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    toast.success(`${isSignIn ? 'Sign-in' : 'Sign-up'} successful!`);
-    setIsModalOpen(false);
-  }
-
   return (
     <>
-      <nav className='flex flex-row justify-start gap-8'>
-        <button className='bg-blue-300 rounded-2xl w-36 p-1 hover:bg-blue-600 font-bold'>Connect wallet</button>
-        <button className='bg-blue-300 rounded-2xl w-36 p-1 hover:bg-blue-600 font-bold' onClick={handleProfileClick}>User profile</button>
-      </nav>
-
-      <div className='flex flex-row gap-28 justify-evenly mt-36 border-t-2 border-b-2 rounded-2xl py-32'>
-        <div className='flex flex-col'>
+      <div className='flex flex-row gap-28 justify-between mt-14 border-t-2 border-b-2 rounded-2xl py-32'>
+        <div className='flex flex-col ml-14'>
           <div className='flex flex-row items-center gap-8'>
             {logoUrl && <Image src={logoUrl} alt={`Audit ${uniqueId} logo`} width={100} height={100} />}
-            <p className='font-bold text-lg'>{auditName}</p>
+            <p className='font-bold text-lg ml-12'>{auditName}</p>
           </div>
           <hr className='w-96 h-1 my-4 bg-gray-300'/>
           <div>
@@ -92,10 +72,10 @@ const SingleAuditPage = () => {
           </div>
         </div>
 
-        <div className='flex flex-col'>
+        <div className='flex flex-col mr-4 border-2 rounded-2xl p-12 shadow-md'>
           <div className='flex flex-col gap-4'>
-            <p>Prize pool: {prizepool}</p>
-            <p>Duration: {auditDate}</p>
+            <p className='font-bold text-md'>Prize pool: {prizepool}</p>
+            <p  className='font-bold text-md'>Duration: {auditDate}</p>
             {(auditStatus === 'active' || auditStatus === 'upcoming') && !isJoined ? (
               <button 
                 className='bg-blue-300 rounded-2xl w-36 p-1 hover:bg-blue-500 font-bold' 
@@ -120,7 +100,7 @@ const SingleAuditPage = () => {
           </div>
           <hr className='w-96 my-4 bg-gray-300 h-1'/>
           <div className='flex flex-col'>
-            <p>Reported issues:</p>
+            <p  className='font-bold text-md'>Reported issues:</p>
             <ul className='mt-4'>
               {reportedBugs.length === 0 ? (
                 <p>- No issues reported yet.</p>
@@ -141,8 +121,8 @@ const SingleAuditPage = () => {
 
       {isReporting && (
         <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='bg-white p-6 rounded-lg'>
-            <h2 className='text-xl mb-8 text-center font-bold'>Report a Bug</h2>
+          <div className='bg-white p-10 rounded-lg w-3/4 max-w-4xl'>
+            <h2 className='text-2xl mb-8 text-center font-bold'>Report a Bug</h2>
             <form onSubmit={handleFormSubmit}>
               <div className='mb-4'>
                 <label className='block text-sm font-bold mb-2' htmlFor='projectName'>
@@ -165,6 +145,7 @@ const SingleAuditPage = () => {
                   className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
                   required
                 >
+                  <option value="Select">Select severity:</option>
                   <option value='Low'>Low</option>
                   <option value='Medium'>Medium</option>
                   <option value='High'>High</option>
@@ -179,7 +160,7 @@ const SingleAuditPage = () => {
                   id='bugDescription' 
                   name='bugDescription'
                   className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                  rows={4}
+                  rows={6}
                   required
                 ></textarea>
               </div>
@@ -226,96 +207,6 @@ const SingleAuditPage = () => {
                   type='button' 
                   className='bg-gray-300 rounded-2xl w-36 p-1 hover:bg-gray-500 font-bold ml-4'
                   onClick={() => setIsReporting(false)}
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-
-      {isModalOpen && (
-        <div className='fixed inset-0 flex items-center justify-center bg-black bg-opacity-50'>
-          <div className='bg-white p-6 rounded-lg'>
-            <h2 className='text-xl mb-8 text-center font-bold'>{isSignIn ? 'Sign In' : 'Sign Up'}</h2>
-            <div className='flex justify-center mb-4'>
-              <button 
-                className={`mr-4 border-2  p-2 rounded-xl ${isSignIn ? 'font-bold bg-green-200 rounded-xl p-2' : ''}`} 
-                onClick={() => setIsSignIn(true)}
-              >
-                Sign In
-              </button>
-              <button 
-                className={`border-2  p-2 rounded-xl ${!isSignIn ? 'font-bold bg-green-200 rounded-xl p-2' : ''}`} 
-                onClick={() => setIsSignIn(false)}
-              >
-                Sign Up
-              </button>
-            </div>
-            <form onSubmit={handleSignInSignUpSubmit}>
-              <div className='mb-4'>
-                <label className='block text-sm font-bold mb-2' htmlFor='email'>
-                  Email
-                </label>
-                <input 
-                  id='email' 
-                  name='email'
-                  type='email'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                  required
-                />
-              </div>
-              <div className='mb-4'>
-                <label className='block text-sm font-bold mb-2' htmlFor='password'>
-                  Password
-                </label>
-                <input 
-                  id='password' 
-                  name='password'
-                  type='password'
-                  className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                  required
-                />
-              </div>
-              {!isSignIn && (
-                <>
-                  <div className='mb-4'>
-                    <label className='block text-sm font-bold mb-2' htmlFor='confirmPassword'>
-                      Confirm Password
-                    </label>
-                    <input 
-                      id='confirmPassword' 
-                      name='confirmPassword'
-                      type='password'
-                      className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                      required
-                    />
-                  </div>
-                  <div className='mb-4'>
-                    <label className='block text-sm font-bold mb-2' htmlFor='username'>
-                      Username
-                    </label>
-                    <input 
-                      id='username' 
-                      name='username'
-                      className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' 
-                      required
-                    />
-                  </div>
-                </>
-              )}
-              <div className='flex justify-end'>
-                <button 
-                  type='submit' 
-                  className='bg-blue-300 rounded-2xl w-36 p-1 hover:bg-blue-500 font-bold'
-                >
-                  {isSignIn? "Sign in": "Sign up"}
-                </button>
-                <button 
-                  type='button' 
-                  className='bg-gray-300 rounded-2xl w-36 p-1 hover:bg-gray-500 font-bold ml-4'
-                  onClick={handleModalClose}
                 >
                   Cancel
                 </button>
