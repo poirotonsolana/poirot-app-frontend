@@ -15,9 +15,9 @@ const Contests = () => {
       <div className='mt-8 w-full max-w-4xl'>
         <div>
           <h2 className='text-2xl font-bold'>Active Audits</h2>
-          <ul className='flex flex-col gap-8 mt-4'>
+          <ul className='flex flex-col gap-8 mt-10'>
             {activeAudits.map(audit => (
-              <li key={audit.id} className='my-10 hover:scale-105 border-none bg-gray-200 rounded-2xl'>
+              <li key={audit.id} className='my-2 hover:scale-105 border-none bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -32,11 +32,11 @@ const Contests = () => {
             ))}
           </ul>
         </div>
-        <div className='mt-24'>
+        <div className='mt-10'>
           <h2 className='text-2xl font-bold'>Upcoming Audits</h2>
-          <ul className='flex flex-col gap-8 mt-4'>
+          <ul className='flex flex-col gap-8 mt-10'>
             {upcomingAudits.map(audit => (
-              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
+              <li key={audit.id} className='my-2 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -51,11 +51,11 @@ const Contests = () => {
             ))}
           </ul>
         </div>
-        <div className='mt-24'>
+        <div className='mt-10'>
           <h2 className='text-2xl font-bold'>Completed Audits</h2>
-          <ul className='flex flex-col gap-8 mt-4'>
+          <ul className='flex flex-col gap-8 mt-10'>
             {completedAudits.map(audit => (
-              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
+              <li key={audit.id} className='my-2 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
@@ -70,11 +70,11 @@ const Contests = () => {
             ))}
           </ul>
         </div>
-        <div className='mt-24'>
+        <div className='mt-10'>
           <h2 className='text-2xl font-bold'>Judged Audits</h2>
-          <ul className='flex flex-col gap-8 mt-4'>
+          <ul className='flex flex-col gap-8 mt-10'>
             {judgedAudits.map(audit => (
-              <li key={audit.id} className='my-10 hover:scale-105 bg-gray-200 rounded-2xl'>
+              <li key={audit.id} className='my-2 hover:scale-105 bg-gray-200 rounded-2xl'>
                 <Audit 
                   id={audit.id} 
                   name={audit.name} 
