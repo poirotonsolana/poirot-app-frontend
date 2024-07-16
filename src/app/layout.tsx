@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
-const inter = Inter({ subsets: ["latin"] });
+const space = Space_Grotesk({ subsets: ["latin"] });
 import Layout from '../../components/Layout'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={space.className}>
       <body>
           <TopButtonsNav/>
           <ToastContainer />
