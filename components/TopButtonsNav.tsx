@@ -33,8 +33,21 @@ const TopButtonsNav = () => {
             />
             <h1 className="text-2xl text-center font-bold my-6">User</h1>
             <p className='text-center rounded-2xl font-bold text-xl mb-6' style={{ backgroundColor: "magenta", width: "15%" , marginTop:"30px", marginBottom:"30px"}}>Senior</p>
-            <h2 className="text-xl text-center font-bold mb-6">Stats:</h2>
-            <p className='my-12'>Total rewards: 289.6K$</p>
+            <h2 className="text-xl text-center font-bold mb-8">Stats:</h2>
+            <div className='flex flex-row '>
+              <div className='flex flex-col mr-12'>
+                <p className='text-lg font-bold'>High severity issues: 1</p>
+                <p className='text-lg font-bold'>High severity issues: 2</p>
+                <p className='text-lg font-bold'>High severity issues: 3</p>
+              </div>
+              <div className='flex flex-col'>
+                <p className='text-lg font-bold'>Solo High: 5</p>
+                <p className='text-lg font-bold'>Solo High: 7</p>
+                <p className='text-lg font-bold'>Solo High: 9</p>
+              </div>
+            </div>
+            <p className='mt-8 text-lg font-bold'>Total rewards: 289.6K$</p>
+            {/*acheivement carouel autoplay*/}
             <div className='flex items-center justify-center mb-4'>
               <button className="mt-4 px-4 py-2 rounded-2xl font-bold" style={{ backgroundColor: "cyan" }} onClick={handleCloseModal}>Close</button>
             </div>

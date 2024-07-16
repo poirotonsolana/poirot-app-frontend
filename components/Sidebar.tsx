@@ -8,13 +8,13 @@ import {
 } from "@material-tailwind/react";
 import {
   PresentationChartBarIcon,
-  ShoppingBagIcon,
 
 } from "@heroicons/react/24/solid";
 
   import Link from "next/link";
   import poirotLogo from '../public/logo.png'
   import Image from "next/image";
+  import LeaderboardIcon from "./LeaderboardIcon";
    
   export default function Sidebar() {
     return (
@@ -44,7 +44,7 @@ import {
           <Link href={"/leaderboard"}>
               <ListItem className="text-lg">
                 <ListItemPrefix>
-                  <ShoppingBagIcon className="h-5 w-5" />
+                  <LeaderboardIcon/>
                 </ListItemPrefix>
                 Leaderboard
               </ListItem>

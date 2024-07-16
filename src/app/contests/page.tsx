@@ -10,8 +10,8 @@ const Contests = () => {
   const judgedAudits = audits.filter(audit => audit.status === 'judging'); 
 
   return (
+    
     <div className='flex flex-col items-center justify-center'>
-      
       <div className='mt-8 w-full max-w-4xl'>
         <div>
           <h2 className='text-2xl font-bold'>Active Audits</h2>
