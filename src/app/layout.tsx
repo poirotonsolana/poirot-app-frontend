@@ -9,7 +9,7 @@ import TopButtonsNav from "../../components/TopButtonsNav";
 
 
 export const metadata: Metadata = {
-  title: "Poirot App",
+  title: "Poirot - Open Platform For Conducting Private or Open Competitive Security Audits",
   description: "Poirot - a decentralized application (dApp) on the Solana ecosystem using the Next.js framework",
 };
 
