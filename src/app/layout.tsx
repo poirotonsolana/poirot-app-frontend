@@ -6,6 +6,11 @@ import Layout from '../../components/Layout'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TopButtonsNav from "../../components/TopButtonsNav";
+import AppKitProvider from "../../config/context";
+import { cookieToInitialState } from 'wagmi'
+import { headers } from 'next/headers'
+import { config} from '../../config'
+
 
 
 export const metadata: Metadata = {
@@ -18,14 +23,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const initialState = cookieToInitialState(config, headers().get('cookie'))
   return (
     <html lang="en" className={space.className}>
       <body>
           <TopButtonsNav/>
           <ToastContainer />
-          <Layout>
-            {children}
-          </Layout>
+          <AppKitProvider initialState={initialState}>
+            <Layout>
+              {children}
+            </Layout>
+          </AppKitProvider>
       </body>
     </html>
   );

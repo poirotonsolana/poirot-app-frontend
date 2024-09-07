@@ -18,8 +18,10 @@ const TopButtonsNav = () => {
   return (
     <>
       <nav className='flex flex-row gap-8 justify-end mt-4 fixed left-0 right-0'>
-        <button className='rounded-2xl p-2 font-bold' style={{ backgroundColor: "cornsilk" }}>Connect wallet</button>
-        <button className='rounded-2xl p-2 mr-4 font-bold' style={{ backgroundColor: "cornsilk" }} onClick={handleProfileClick}>User profile</button>
+        <w3m-button />
+        <button  className='rounded-2xl p-2 mr-4 text-white font-semibold bg-[#5773FF]' onClick={handleProfileClick}>
+          User profile
+        </button>
       </nav>
 
       {isModalOpen && (
